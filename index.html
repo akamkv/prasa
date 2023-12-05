@@ -1,0 +1,323 @@
+<script>
+    //najskor si to tu nastavime
+    var prveCislo;
+    var druheCislo;
+    var sucet;
+    var rozdiel;
+    var nasobok;
+    var zbytok;
+
+    var meno;
+    var priezvisko;
+    var prezyvka;
+
+    var medzera;
+    var text1 = null;
+    var text2;
+    var text3;
+    var text4 = "Zaciatok vety ";
+    
+    var pozdrav;
+    var volamSa;
+    var emocionalnaPodpora;
+    
+    var celeMeno;
+    var dlzkaMena;
+    var dlzkaCelehoMena;
+    var prvePismenoMena;
+    var prvePismenoPriezviska;
+    var prvePismeno;
+    var poslednePismenoMena;
+    var predPoslednePismenoMena;
+    
+//arrays
+
+var myArray;
+var myArray1 = [["Martin", 8, "Cola"], ["Tomas", 24, "Pepsi"]];
+var myData;
+
+myArray = [[1,2,3],["ano","nie","mozno"],[["a","b","c"],["A","B","C"]]];
+myArray[1][2] = "asi";
+myArray.push(["Cola","Pepsi","Sprite"]);
+myArray.pop();
+myArray.shift();
+myArray.unshift([4,5,6]);
+myData = myArray[0];
+
+
+//funkcie
+
+    function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {
+        var result;
+        result = myAdjective + " " + myNoun + " " + myVerb + " " + myAdverb + " domov.";
+        return result;
+    }
+    myAdjective = "Maly";
+    console.log(wordBlanks("clovek", myAdjective, "ide", "pomaly"));
+
+
+    function myFirstFunction() {
+        console.log(myArray);
+    };
+    myFirstFunction();
+
+
+    function spocitavanie(cislo1, cislo2) {
+        var cislo1;
+        var cislo2;
+        var vysledok;
+        cislo1 = 50;
+        cislo2 = 20;
+        vysledok = cislo1 + cislo2;
+        console.log(vysledok);
+    };
+    cislo1 = 10;
+    cislo2 = 5;
+    spocitavanie(cislo1, cislo2);
+
+    function spocitavanie1(cislo1, cislo2) {
+        var cislo1;
+        var cislo2;
+        var vysledok;
+        vysledok = cislo1 + cislo2;
+        return vysledok;
+    };
+    console.log(spocitavanie1(10, 10));
+
+
+    function dalsiVPoradi(array, item) {
+        array.push(item);
+        return array.shift();
+    }
+var testArray = [1,2,3,4,5]
+console.log("Predtym: " + JSON.stringify(testArray));
+console.log(dalsiVPoradi(testArray, 6));
+console.log("Potom: " + JSON.stringify(testArray));
+
+
+function jeToPravda(pravdicka) {
+if (pravdicka) {
+    return "Je to pravda.";
+}
+return "Je to prachsproste klamstvo.";
+}
+console.log(jeToPravda(false));
+
+
+function testStrict(val){
+if (val == 8) {
+return "Rovna sa.";
+} else {
+return "Nerovna sa :(";
+}}
+console.log(testStrict("8"));
+
+
+function testStrict1(val){
+if (val == 8) {
+vysledok = "Rovna sa.";
+}
+else {vysledok = "Nerovna sa :("
+}
+return vysledok;
+}
+console.log(testStrict("8"));
+
+
+function testIf(val){
+    if (val >= 20) {
+        return "20 alebo viac."
+    }
+    if (val >= 10) {
+        return "10 alebo viac."
+    }
+    return "Menej ako 10."
+}
+console.log(testIf(9));
+
+
+function vacsiMensiSucasne(val){
+if (val < 10 && val > 4) {
+return "Je to nieco medzi 5 az 10.";
+}
+return "Nieco ine.";
+}
+console.log(vacsiMensiSucasne(7));
+
+function testElseIf(val){
+    if (val > 10) {
+        return "Viac ako 10.";
+    } else if (val < 5) {
+        return "Menej ako 5.";
+    } else {
+        return "Medzi 5 a 10.";
+    }
+}
+console.log(testElseIf(3));
+
+var hodnotenie = ["Vyborne.", "Chvalitebne.", "Dobre.", "Dostatocne.", "Nedostatocne.", "Cele zle!"];
+function znamka(mierka, vysledok) {
+    if (vysledok >= mierka) {
+        return hodnotenie[0];
+    } else if (vysledok >= mierka - 2) {
+        return hodnotenie[1];
+    } else if (vysledok >= mierka - 4) {
+        return hodnotenie[2];
+    } else if (vysledok >= mierka - 6) {
+        return hodnotenie[3];
+    } else if (vysledok >= mierka - 8) {
+        return hodnotenie[4];
+    } else {
+        return hodnotenie[5];
+    }
+}
+console.log(znamka(10, 1));
+
+var odpoved;
+function testSwitch(val) {
+    switch (val) {
+        case 1:
+            odpoved = "jednotka";
+            break;
+        case 2:
+            odpoved = "dvojka";
+            break;
+        case 3:
+            odpoved = "trojka";
+            break;
+        case 4:
+            odpoved = "stvorka";
+            break;
+    }
+    return odpoved;
+}
+console.log(testSwitch(1));
+
+var odpoved = ["Ananas", "Banan", "Cibula", "Durman", "Plati len pre pismena a-d."];
+function testSwitch01(val) {
+    switch (val) {
+        case "a":
+            odpoved = odpoved[0];
+            break;
+        case "b":
+            odpoved = odpoved[1];
+            break;
+        case "c":
+            odpoved = odpoved[2];
+            break;
+        case "d":
+            odpoved = odpoved[3];
+            break;
+        default:
+            odpoved = odpoved[4];
+            break;
+    }
+    return odpoved;
+}
+console.log(testSwitch01(1));
+
+function viacMenejPravda (a, b) {
+    if (a < 0 || b < 0) {
+        return undefined;
+    }
+    return a < b;
+}
+console.log(viacMenejPravda(1, 2))
+
+function pocitanieKariet(val) {
+    vysledok = 0;
+    switch(val) {
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+            vysledok--;
+        break;
+        case 10:
+        case "J":
+        case "Q":
+        case "K":
+        case "A":
+            vysledok++;
+        break;
+    }
+var tip = "Cakaj.";
+    if (vysledok > 0) {
+        tip = "Hraj.";
+    }
+
+    return vysledok + " " + tip;
+}
+
+console.log("=========================VYSLEDOK")
+console.log(vysledok)
+// PRECO SA TO PRED KONZOLOU 3x NESPUSTI?
+pocitanieKariet(3);
+console.log(vysledok)
+console.log("==========================")
+pocitanieKariet(3);
+pocitanieKariet(2);
+console.log(pocitanieKariet(2));
+
+
+    //a teraz kodujeme
+
+prveCislo = 10;
+druheCislo = 10;
+sucet = "Sucet = " + (prveCislo + druheCislo);
+sucet = "Sucet = " + sucet;
+rozdiel = "Rozdiel = " + (prveCislo - druheCislo);
+nasobok = "Nasobok = " + (prveCislo * druheCislo);
+zbytok = "Zbytok = " + (prveCislo % druheCislo);
+
+meno = "Martin";
+priezvisko = "Velicky";
+prezyvka = "Konyk";
+
+pozdrav = "Hello!";
+medzera = "\n";
+text1 = "Skusime dat \"nieco\" do uvodzoviek.";
+text2 = 'Alebo sa to da aj "takto".';
+text3 = "Prvy riadok\nDruhy riadok\t\\\nTreti riadok";
+text4 += "a jej koniec.";
+emocionalnaPodpora = "Ide ti to " + prezyvka + " . Nice!";
+
+volamSa = "Volam sa " + meno;
+volamSa += ", tesi ma!";
+
+celeMeno = meno + " " + priezvisko;
+
+dlzkaCelehoMena = meno.length + priezvisko.length;
+dlzkaMena = "Dlzka mojho mena je " + meno.length + " pismen a dlzka priezviska je " + priezvisko.length + " pismen.\nSpolu to je " + dlzkaCelehoMena + " pismen.";
+
+prvePismenoMena = meno[0];
+prvePismenoPriezviska = priezvisko[0];
+prvePismeno = "Prve pismeno mojho mena je \"" + prvePismenoMena + "\" a prve pismeno priezviska je \"" + prvePismenoPriezviska + "\".";
+
+poslednePismenoMena = meno[meno.length - 1];
+poslednePismenoPriezviska = priezvisko[priezvisko.length - 1];
+predPoslednePismenoMena = meno[meno.length - 2];
+poslednePismeno = "Posledne pismeno mojho mena je \"" + poslednePismenoMena + "\" a posledne pismeno priezviska je \"" + poslednePismenoPriezviska + "\".\nPredposledne pismeno mena je \"" + predPoslednePismenoMena + ".";
+
+//a pozrieme sa na to v konzole
+console.log("\n" + pozdrav);
+console.log("Prve cislo = " + prveCislo);
+console.log("Druhe cislo = " + druheCislo);
+console.log(medzera);
+console.log("sucet = " + sucet);
+console.log(rozdiel);
+console.log(nasobok);
+console.log(zbytok);
+console.log(text1);
+console.log(text2);
+console.log(text3);
+console.log(text4);
+console.log(volamSa + " " + celeMeno + ".");
+console.log(dlzkaMena);
+console.log(prvePismeno);
+console.log(poslednePismeno);
+console.log(emocionalnaPodpora);
+console.log(myArray);
+console.log(myData);
+</script>
