@@ -223,9 +223,9 @@ function viacMenejPravda (a, b) {
     return a < b;
 }
 console.log(viacMenejPravda(1, 2))
-console.log("zmena")
+
+var vysledok = 0;
 function pocitanieKariet(val) {
-    vysledok = 0;
     switch(val) {
         case 2:
         case 3:
@@ -250,18 +250,56 @@ var tip = "Cakaj.";
     return vysledok + " " + tip;
 }
 
-console.log("=========================VYSLEDOK")
-console.log(vysledok)
-// PRECO SA TO PRED KONZOLOU 3x NESPUSTI?
+pocitanieKariet(2);
 pocitanieKariet(3);
-console.log(vysledok)
-console.log("==========================")
 pocitanieKariet(3);
 pocitanieKariet(2);
 console.log(pocitanieKariet(2));
 
 
-    //a teraz kodujeme
+// OBJECTS==================================
+console.log("\nOBJECTS==================================\n");
+
+var meObject = {
+    "name": "Martin",
+    "surname": "Velicky",
+    "nickname": "Konyk",
+    "age": 44,
+    "my hobbies": ["hiking", "biking", "skiing", "swimming"],
+    "address": {
+        "street": "Za humnami",
+        "number": 259,
+        "city": "Selpice",
+        "country": "Slovakia"
+    } 
+}
+var myHobby01 = meObject["my hobbies"][0];
+var myHobby02 = "My hobby no 2 is " + meObject["my hobbies"][1] + ".";
+var firstName = "name";
+var whatIsMyName = meObject[firstName];
+
+console.log(whatIsMyName);
+console.log(meObject.name);
+console.log(meObject.address);
+console.log(meObject["my hobbies"][0]);
+console.log(myHobby02);
+
+console.log("\nMy car ==================================\n");
+
+var myCar = {
+    "wheels": 4,
+    "engines": 1,
+    "seats": 5,
+    "drivers": ["Martin", "Tomas", "Jozef", "Peter"],
+    "passengers": ["Jana", "Zuzana", "Eva", "Maria"]
+}
+myCar.color = "black";
+
+console.log(myCar.color);
+
+
+
+//a teraz kodujeme
 
 prveCislo = 10;
 druheCislo = 10;
